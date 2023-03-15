@@ -66,8 +66,7 @@ def getWarp(img, biggest):
 
 
 while True:
-    success, img = cap.read()
-# img = cv2.imread('Resources/1.jpg')
+    img = cv2.imread('Resources/1.jpg')
     img = cv2.resize(img, (widthImg, heightImg))
     imgContour = img.copy()
     imgThres = preProcessing(img)
@@ -82,7 +81,6 @@ while True:
         imgArray = ([[img, imgThres], [img, img]])
         stackedImages = stackImages(0.6, imgArray)
         cv2.imshow("Workflow", stackedImages)
-# cv2.waitKey(0)
     key = cv2.waitKey(1) & 0xFF
     if key == ord('q'):
         break
